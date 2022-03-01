@@ -1,7 +1,5 @@
-weight=int(input("ใส่น้ำหนักของคุณ (KG) =")) #ที่ต้องมี int เพราะกำหนดค่าเป็นจำนวนเต็ม
-height=int(input("ใส่ส่วนสูงของคุณ (CM) =")) #ที่ต้องมี int เพราะกำหนดค่าเป็นเมตร มันจึงมีจุด
+weight=int(input("Put your weight in here.(KG) ="))
+height=int(input("Put your height in here.(CM) ="))
 height=height/100
-#ผลรวมของของ BMI
-#ต้องใส่()เพราะให้มันทำงานก่อน
 sum=(weight)/((height)**2) 
-print("นี่คือค่าBMIของคุณ = ",sum)
+print("This's your BMI.= ",sum)
