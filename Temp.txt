@@ -1,0 +1,21 @@
+from machine import Pin
+from machine import ADC
+import display
+from time import sleep
+
+Temp = None
+
+def adcRead(analog_pin):
+  adc = ADC(Pin(analog_pin))
+  adc.atten(ADC.ATTN_11DB)
+  adc.width(ADC.WIDTH_12BIT)
+  return adc.read()
+
+
+while True:
+  Temp = (adcRead(34)) / 40
+  display.fill(0)
+  display.text(str('Temperature :'), 0, 0, 1)
+  display.text(str(Temp), 2, 20, 1)
+  display.show()
+  sleep(0.5)
