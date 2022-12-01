@@ -1,0 +1,23 @@
+import display
+from machine import Pin
+from time import sleep
+
+stu = None
+sw1 = None
+
+
+stu = 0
+while True:
+  display.fill(0)
+  display.text(str((Pin(19, Pin.IN).value())), 0, 0, 1)
+  display.show()
+  sw1 = Pin(19, Pin.IN).value()
+  if sw1 == 0:
+    if stu == 0:
+      stu = 1
+      Pin(23, Pin.OUT).value(stu)
+      sleep(0.3)
+    else:
+      stu = 0
+      Pin(23, Pin.OUT).value(stu)
+      sleep(0.3)
